@@ -2,9 +2,10 @@
 
 This is a mastermind like game.
 
-## Getting Started
+## Current Tasks
 
-To be added
+- main.js - add all the functions to make game work backend
+
 
 ### Prerequisites
 
@@ -13,6 +14,7 @@ To be added
 
 ### Running Game
 
+To be added
 
 ## Built With
 
