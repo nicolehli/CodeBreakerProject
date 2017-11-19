@@ -34,9 +34,9 @@ function setMessage(msg) {
   document.getElementById('message').innerHTML = msg;
 }
 
-// TODO
+// TODO check guess (string input) is length of 4 number
 function validateInput(guessLen){
-  if (guessLen.toString().length == 4)
+  if (guessLen.length == 4)
     return true;
   else {
     setMessage("Guesses must be exactly 4 characters long.");
