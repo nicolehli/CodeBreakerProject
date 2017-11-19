@@ -108,6 +108,6 @@ function showAnswer(boolWin) {
 
 // TODO create showReplay
 function showReplay() {
-  document.getElementById("guessing-div").style.display = none;
-  document.getElementById("replay-div").style.display = block;
+  document.getElementById("guessing-div").style.display = "none";
+  document.getElementById("replay-div").style.display = "block";
 }
