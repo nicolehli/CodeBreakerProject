@@ -9,10 +9,18 @@ function guess() {
     setHiddenFields();
 
   // TODO Validate input
-  if (!validateInput(input.value)) {
+  if (validateInput(input.value)) {
     attempt.value++;
   } else {
     return false;
+  }
+
+  if (getResults(input.value))
+    setMessage('You Win! :)');
+  else if (!getResults(input.value) && attempt.value >= 10)
+    setMessage('You Lose! :(');
+  } else {
+    setMessage('Incorrect, try again.');
   }
 }
 
@@ -63,25 +71,21 @@ function getResults(guess) {
   for (var i=0; i<4; i++) {
     switch (true) {
       case guess.charAt(i) == answer.value.charAt(i):
-        hintOutput += '<span class="glyphicon glyphicon-ok"></span>';
+        hintOutput += '<span class="glyphicon glyphicon-ok"></span> ';
         break;
       case guess.charAt(i).indexOf(answer.value) > -1:
-        hintOutput += '<span class="glyphicon glyphicon-transfer"></span>';
+        hintOutput += '<span class="glyphicon glyphicon-transfer"></span> ';
         break;
       case guess.charAt(i).indexOf(answer.value) == -1:
-        hintOutput += '<span class="glyphicon glyphicon-remove"></span>';
+        hintOutput += '<span class="glyphicon glyphicon-remove"></span> ';
         break;
     }
   }
 
+  hintOption = '<div>' + hintOption + '</div>'
+
   // TODO add user-guess to our results
-  document.getElementById("results") = '<div class="row"><span class="col-md-6">' + hintOutput + '</span><div class="col-md-6">';
-
-  // TODO create result explaination
-  var results = '';
-
-  // TODO Setup Win Condition
-
+  document.getElementById("results").innerHTML = '<div class="row"><span class="col-md-6">' + hintOutput + '</span><div class="col-md-6">';
 
   // TODO Check for correct guess
   return charGuessedCorrect == 4;
