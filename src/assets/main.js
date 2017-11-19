@@ -5,7 +5,7 @@ function guess() {
     let input = document.getElementById('user-guess');
 
     // TODO add functionality to guess function here
-    if (attempt.length == 0 && answer.length == 0)
+    if (attempt.toString().length == 0 && answer.toString().length == 0)
       setHiddenFields();
 
 }
