@@ -5,8 +5,8 @@ function guess() {
     let input = document.getElementById('user-guess');
 
     // TODO add functionality to guess function here
-    // if (attempt.toString().length == 0 || answer.toString().length == 0)
-    //   setHiddenFields();
+    if (attempt.value.length == 0 || answer.value.length == 0)
+      setHiddenFields();
 
 }
 
@@ -14,32 +14,31 @@ function guess() {
 
 // TODO Set answer variable to a random 4 char long number between 0000 and 9999
 function setHiddenFields() {
-  attempt.value = 0;
+  attempt.value = "0";
 
   // NOTE Math.random() generate a number between 0 to 1 (not incl. 1)
-  answer.value = Math.floor((Math.random() * 10000));
+  answer.value = Math.floor((Math.random() * 10000)).toString();
 
-  while (answer.toString().length != 4) {
-    var numOfZeros = 4 - answer.toString().length;
+  while (answer.value.length != 4) {
+    var numOfZeros = 4 - answer.value.length;
     for(var i = 0; i < numOfZeros; i++){
       answer.value = "0" + answer.value;
     }
-  }
 }
 
-// // TODO Set message label to what is provided to parameter
-// function setMessage(msg) {
-//
-//   // set .innerHTML not .value
-//   document.getElementById('message').innerHTML = msg;
-// }
-//
-// // TODO check guess (string input) is length of 4 number
-// function validateInput(guessLen){
-//   if (guessLen.length == 4)
-//     return true;
-//   else {
-//     setMessage("Guesses must be exactly 4 characters long.");
-//     return false;
-//   }
-// }
+// TODO Set message label to what is provided to parameter
+function setMessage(msg) {
+
+  // set .innerHTML not .value
+  document.getElementById('message').innerHTML = msg;
+}
+
+// TODO check guess (string input) is length of 4 number
+function validateInput(guessLen){
+  if (guessLen.length == 4)
+    return true;
+  else {
+    setMessage("Guesses must be exactly 4 characters long.");
+    return false;
+  }
+}
