@@ -9,15 +9,15 @@ function guess() {
     setHiddenFields();
 
   // TODO Validate input
-  if (validateInput(input.value)) {
+  if (validateInput(input)) {
     attempt.value++;
   } else {
     return false;
   }
 
-  if (getResults(input.value))
+  if (getResults(input))
     setMessage('You Win! :)');
-  else if (!getResults(input.value) && attempt.value >= 10)
+  else if (!getResults(input) && attempt.value >= 10)
     setMessage('You Lose! :(');
   } else {
     setMessage('Incorrect, try again.');
@@ -60,7 +60,7 @@ function validateInput(guessLen) {
 }
 
 // TODO Create getResults function
-function getResults(guess) {
+function getResults(input) {
   var charGuessedCorrect = 0;
 
   var hintOutput = '';
@@ -70,13 +70,14 @@ function getResults(guess) {
   // case 3: char does not match, char not in answer
   for (var i=0; i<4; i++) {
     switch (true) {
-      case guess.charAt(i) == answer.value.charAt(i):
+      case input.toString().charAt(i) == answer.value.charAt(i):
         hintOutput += '<span class="glyphicon glyphicon-ok"></span> ';
+        charGuessedCorrect++;
         break;
-      case guess.charAt(i).indexOf(answer.value) > -1:
+      case input.toString().charAt(i).indexOf(answer.value) > -1:
         hintOutput += '<span class="glyphicon glyphicon-transfer"></span> ';
         break;
-      case guess.charAt(i).indexOf(answer.value) == -1:
+      case input.toString().charAt(i).indexOf(answer.value) == -1:
         hintOutput += '<span class="glyphicon glyphicon-remove"></span> ';
         break;
     }
