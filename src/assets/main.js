@@ -22,7 +22,7 @@ function setHiddenFields() {
   while (answer.toString().length != 4) {
     var numOfZeros = 4 - answer.toString().length;
     for(var i = 0; i < numOfZeros; i++){
-      answer = "0" + answer;
+      answer.value = "0" + answer.value;
     }
   }
 }
