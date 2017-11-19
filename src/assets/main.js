@@ -51,7 +51,7 @@ function setMessage(msg) {
 
 // TODO Create validateInput function
 function validateInput(guessLen) {
-  if (guessLen.length == 4)
+  if (guessLen.toString().length == 4)
     return true;
   else {
     setMessage("Guesses must be exactly 4 characters long.");
@@ -63,7 +63,7 @@ function validateInput(guessLen) {
 function getResults(input) {
   var charGuessedCorrect = 0;
 
-  var hintOutput = '';
+  var hintOutput = " ";
 
   // case 1: char matches
   // case 2: char does not match, char exists in answer
