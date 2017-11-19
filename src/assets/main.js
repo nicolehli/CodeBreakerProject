@@ -21,8 +21,7 @@ function guess() {
     setMessage('You Win! :)');
     showAnswer(true);
     showReplay();
-  }
-  else if (attempt.value >= 10) {
+  } else if (attempt.value >= 10) {
     setMessage('You Lose! :(');
     showAnswer(false);
     showReplay();
@@ -90,21 +89,21 @@ function getResults(inputValue) {
 
   // TODO add user-guess to our results
   document.getElementById("results").innerHTML +=
-  '<span class="col-md-6">' + inputValue + '</span>' +
-  '<span class="col-md-6">' + hintOutput + '</span>';
+    '<span class="col-md-6">' + inputValue + '</span>' +
+    '<span class="col-md-6">' + hintOutput + '</span>';
 
   // TODO Check for correct guess
   return charGuessedCorrect == 4;
 }
 
 // TODO create showAnswer
-function showAnswer( boolWin ) {
+function showAnswer(boolWin) {
   document.getElementById('code').innerHTML = answer.value;
   // if (boolWin)
   //   document.getElementByClassName('code') = ' success';
   // else {
   //   document.getElementByClassName('code') = ' failure';
-  }
+  // }
 }
 
 // TODO create showReplay
