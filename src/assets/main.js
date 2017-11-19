@@ -5,7 +5,7 @@ function guess() {
     let input = document.getElementById('user-guess');
 
     // TODO add functionality to guess function here
-    if (attempt.toString().length == 0 && answer.toString().length == 0)
+    if (attempt.toString().length == 0 || answer.toString().length == 0)
       setHiddenFields();
 
 }
@@ -14,14 +14,14 @@ function guess() {
 
 // TODO Set answer variable to a random 4 char long number between 0000 and 9999
 function setHiddenFields() {
-  attempt = 0;
+  attempt.value = 0;
 
   // NOTE Math.random() generate a number between 0 to 1 (not incl. 1)
-  answer = Math.floor((Math.random() * 10000) - 1);
+  answer.value = Math.floor((Math.random() * 10000));
 
   while (answer.toString().length != 4) {
-    var loop = 4 - answer.toString().length;
-    for(var i = 0; i<loop; i++){
+    var numOfZeros = 4 - answer.toString().length;
+    for(var i = 0; i < numOfZeros; i++){
       answer = "0" + answer;
     }
   }
