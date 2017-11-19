@@ -17,12 +17,17 @@ function guess() {
     return false;
   }
 
-  if (getResults(input.value))
+  if (getResults(input.value)) {
     setMessage('You Win! :)');
+    showAnswer(true);
+  }
   else if (attempt.value >= 10) {
     setMessage('You Lose! :(');
+    showAnswer(false);
+    showReplay();
   } else {
     setMessage('Incorrect, try again.');
+    showReplay();
   }
 }
 
@@ -66,13 +71,11 @@ function getResults(inputValue) {
   var charGuessedCorrect = 0;
 
   var hintOutput = " ";
-  console.log("answer: " + answer.value.toString());
+
   // case 1: char matches
   // case 2: char does not match, char exists in answer
   // case 3: char does not match, char not in answer
   for (var i = 0; i < 4; i++) {
-    console.log("looking at: " + inputValue.toString().charAt(i));
-
     if (inputValue.toString().charAt(i) == answer.value.charAt(i)) {
       hintOutput += '<span class="glyphicon glyphicon-ok"></span> ';
       charGuessedCorrect++;
@@ -86,8 +89,24 @@ function getResults(inputValue) {
   hintOutput = '<div>' + hintOutput + '</div>'
 
   // TODO add user-guess to our results
-  document.getElementById("results").innerHTML = '<div class="row"><span class="col-md-6">' + hintOutput + '</span><div class="col-md-6">';
+  document.getElementById("results").innerHTML +=
+  '<span class="col-md-6">' + inputValue + '</span>' +
+  '<span class="col-md-6">' + hintOutput + '</span>';
 
   // TODO Check for correct guess
   return charGuessedCorrect == 4;
+}
+
+// TODO create showAnswer
+function showAnswer( boolWin ) {
+  if (boolWin)
+    document.getElementById('code').innerHTML = answer.value.toString() + ' success!';
+  else {
+    document.getElementById('code').innerHTML = answer.value.toString() + ' failure';
+  }
+}
+
+// TODO create showReplay
+function showReplay() {
+
 }
