@@ -24,6 +24,7 @@ function setHiddenFields() {
     for(var i = 0; i < numOfZeros; i++){
       answer.value = "0" + answer.value;
     }
+  }
 }
 
 // TODO Set message label to what is provided to parameter
