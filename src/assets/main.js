@@ -2,12 +2,18 @@ let answer = document.getElementById('answer');
 let attempt = document.getElementById('attempt');
 
 function guess() {
-    let input = document.getElementById('user-guess');
+  let input = document.getElementById('user-guess');
 
-    // TODO add functionality to guess function here
-    if (attempt.value.length == 0 || answer.value.length == 0)
-      setHiddenFields();
+  // TODO Only set the answer and attempt hidden inputs when they aren't already set
+  if (attempt.value.length == 0 || answer.value.length == 0)
+    setHiddenFields();
 
+  // TODO Validate input
+  if (!validateInput(input.value)) {
+    attempt.value++;
+  } else {
+    return false;
+  }
 }
 
 // implement new functions here
@@ -19,9 +25,10 @@ function setHiddenFields() {
   // NOTE Math.random() generate a number between 0 to 1 (not incl. 1)
   answer.value = Math.floor((Math.random() * 10000)).toString();
 
+  // TODO Make sure the hidden input answer's value is exactly 4 characters long
   while (answer.value.length != 4) {
     var numOfZeros = 4 - answer.value.length;
-    for(var i = 0; i < numOfZeros; i++){
+    for (var i = 0; i < numOfZeros; i++) {
       answer.value = "0" + answer.value;
     }
   }
@@ -34,12 +41,48 @@ function setMessage(msg) {
   document.getElementById('message').innerHTML = msg;
 }
 
-// TODO check guess (string input) is length of 4 number
-function validateInput(guessLen){
+// TODO Create validateInput function
+function validateInput(guessLen) {
   if (guessLen.length == 4)
     return true;
   else {
     setMessage("Guesses must be exactly 4 characters long.");
     return false;
   }
+}
+
+// TODO Create getResults function
+function getResults(guess) {
+  var charGuessedCorrect = 0;
+
+  var hintOutput = '';
+
+  // case 1: char matches
+  // case 2: char does not match, char exists in answer
+  // case 3: char does not match, char not in answer
+  for (var i=0; i<4; i++) {
+    switch (true) {
+      case guess.charAt(i) == answer.value.charAt(i):
+        hintOutput += '<span class="glyphicon glyphicon-ok"></span>';
+        break;
+      case guess.charAt(i).indexOf(answer.value) > -1:
+        hintOutput += '<span class="glyphicon glyphicon-transfer"></span>';
+        break;
+      case guess.charAt(i).indexOf(answer.value) == -1:
+        hintOutput += '<span class="glyphicon glyphicon-remove"></span>';
+        break;
+    }
+  }
+
+  // TODO add user-guess to our results
+  document.getElementById("results") = '<div class="row"><span class="col-md-6">' + hintOutput + '</span><div class="col-md-6">';
+
+  // TODO create result explaination
+  var results = '';
+
+  // TODO Setup Win Condition
+
+
+  // TODO Check for correct guess
+  return charGuessedCorrect == 4;
 }
