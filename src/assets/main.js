@@ -20,6 +20,7 @@ function guess() {
   if (getResults(input.value)) {
     setMessage('You Win! :)');
     showAnswer(true);
+    showReplay();
   }
   else if (attempt.value >= 10) {
     setMessage('You Lose! :(');
@@ -27,7 +28,6 @@ function guess() {
     showReplay();
   } else {
     setMessage('Incorrect, try again.');
-    showReplay();
   }
 }
 
@@ -99,14 +99,16 @@ function getResults(inputValue) {
 
 // TODO create showAnswer
 function showAnswer( boolWin ) {
-  if (boolWin)
-    document.getElementById('code').innerHTML = answer.value.toString() + ' success!';
-  else {
-    document.getElementById('code').innerHTML = answer.value.toString() + ' failure';
+  document.getElementById('code').innerHTML = answer.value;
+  // if (boolWin)
+  //   document.getElementByClassName('code') = ' success';
+  // else {
+  //   document.getElementByClassName('code') = ' failure';
   }
 }
 
 // TODO create showReplay
 function showReplay() {
-
+  document.getElementById("guessing-div").style.display = none;
+  document.getElementById("replay-div").style.display = block;
 }
