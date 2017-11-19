@@ -27,19 +27,19 @@ function setHiddenFields() {
   }
 }
 
-// TODO Set message label to what is provided to parameter
-function setMessage(msg) {
-
-  // set .innerHTML not .value
-  document.getElementById('message').innerHTML = msg;
-}
-
-// TODO check guess (string input) is length of 4 number
-function validateInput(guessLen){
-  if (guessLen.length == 4)
-    return true;
-  else {
-    setMessage("Guesses must be exactly 4 characters long.");
-    return false;
-  }
-}
+// // TODO Set message label to what is provided to parameter
+// function setMessage(msg) {
+//
+//   // set .innerHTML not .value
+//   document.getElementById('message').innerHTML = msg;
+// }
+//
+// // TODO check guess (string input) is length of 4 number
+// function validateInput(guessLen){
+//   if (guessLen.length == 4)
+//     return true;
+//   else {
+//     setMessage("Guesses must be exactly 4 characters long.");
+//     return false;
+//   }
+// }
