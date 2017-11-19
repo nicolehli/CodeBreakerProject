@@ -19,7 +19,7 @@ function guess() {
 
   if (getResults(input.value))
     setMessage('You Win! :)');
-  else if (!getResults(input.value) && attempt.value >= 10) {
+  else if (attempt.value >= 10) {
     setMessage('You Lose! :(');
   } else {
     setMessage('Incorrect, try again.');
@@ -66,23 +66,20 @@ function getResults(inputValue) {
   var charGuessedCorrect = 0;
 
   var hintOutput = " ";
-
+  console.log("answer: " + answer.value.toString());
   // case 1: char matches
   // case 2: char does not match, char exists in answer
   // case 3: char does not match, char not in answer
   for (var i = 0; i < 4; i++) {
-    switch (true) {
-      case inputValue.toString().charAt(i) == answer.value.charAt(i):
-        hintOutput += '<span class="glyphicon glyphicon-ok"></span> ';
-        charGuessedCorrect++;
-        console.log(charGuessedCorrect++);
-        break;
-      case inputValue.toString().charAt(i).indexOf(answer.value) > -1:
-        hintOutput += '<span class="glyphicon glyphicon-transfer"></span> ';
-        break;
-      case inputValue.toString().charAt(i).indexOf(answer.value) == -1:
-        hintOutput += '<span class="glyphicon glyphicon-remove"></span> ';
-        break;
+    console.log("looking at: " + inputValue.toString().charAt(i));
+
+    if (inputValue.toString().charAt(i) == answer.value.charAt(i)) {
+      hintOutput += '<span class="glyphicon glyphicon-ok"></span> ';
+      charGuessedCorrect++;
+    } else if (answer.value.indexOf(inputValue.toString().charAt(i)) > -1) {
+      hintOutput += '<span class="glyphicon glyphicon-transfer"></span> ';
+    } else {
+      hintOutput += '<span class="glyphicon glyphicon-remove"></span> ';
     }
   }
 
