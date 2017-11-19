@@ -99,11 +99,11 @@ function getResults(inputValue) {
 // TODO create showAnswer
 function showAnswer(boolWin) {
   document.getElementById('code').innerHTML = answer.value;
-  // if (boolWin)
-  //   document.getElementByClassName('code') = ' success';
-  // else {
-  //   document.getElementByClassName('code') = ' failure';
-  // }
+  if (boolWin)
+    document.getElementById('code').className += ' success';
+  else {
+    document.getElementById('code').className += ' failure';
+  }
 }
 
 // TODO create showReplay
