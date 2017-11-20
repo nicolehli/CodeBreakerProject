@@ -96,6 +96,11 @@ line-height: 60px;
   border-left: 100px solid rgb(73, 129, 224);
 }
 
+#legend {
+  list-style: none;
+  margin-left: -20px;
+}
+
 footer {
 
   padding-top: 30px;
