@@ -1,16 +1,18 @@
 # Code Breaker
 
-This is a mastermind like game.
+A mastermind inspired game.
 
 ## Current Tasks
-
-- [X] main.js - created all the functions to make game work backend
-- [X] main.css - updated and added to file for styling
+- [x] main.js - created all the functions to make game work backend
+- [x] main.css - updated and added to file for styling
 - [x] index.html - given at point of fork
 
 ### Game Screenshot
-[![Code Breaker Screenshot](screenshot.jpg)](screenshot.jpg)
+![General Screenshot](screenshot/gamesession.png)
 
+![Win Screenshot](screenshot/lose.png)
+
+![Lose Screenshot](screenshot/win.png)
 
 
 ## Built With
