@@ -89,8 +89,8 @@ function getResults(inputValue) {
 
   // TODO add user-guess to our results
   document.getElementById("results").innerHTML +=
-    '<span class="col-md-6">' + inputValue + '</span>' +
-    '<span class="col-md-6">' + hintOutput + '</span>';
+    '<span class="col-md-6 col-xs-6">' + inputValue + '</span>' +
+    '<span class="col-md-6 col-xs-6">' + hintOutput + '</span>';
 
   // TODO Check for correct guess
   return charGuessedCorrect == 4;
@@ -98,7 +98,7 @@ function getResults(inputValue) {
 
 // TODO create showAnswer
 function showAnswer(boolWin) {
-  document.getElementById('code').innerHTML = answer.value;
+  document.getElementById('code').innerHTML = answer.value.toString().split("").join(" ");
   if (boolWin)
     document.getElementById('code').className += ' success';
   else {
