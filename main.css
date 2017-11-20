@@ -95,3 +95,24 @@ line-height: 60px;
   margin-top: 10px;
   border-left: 100px solid rgb(73, 129, 224);
 }
+
+footer {
+
+  padding-top: 30px;
+  font-family: arial;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+footer .fa {
+  font-size: 2em;
+  color: white;
+}
+
+footer .fa:hover {
+  color: white;
+  text-decoration: none;
+  border-bottom: 3px solid white;
+  border-top: 3px solid white;
+}
