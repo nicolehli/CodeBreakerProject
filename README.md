@@ -4,17 +4,14 @@ This is a mastermind like game.
 
 ## Current Tasks
 
-- main.js - add all the functions to make game work backend
+- [X] main.js - created all the functions to make game work backend
+- [X] main.css - updated and added to file for styling
+- [x] index.html - given at point of fork
+
+### Game Screenshot
+[![Code Breaker Screenshot](screenshot.jpg)](screenshot.jpg)
 
 
-### Prerequisites
-
-To be added
-
-
-### Running Game
-
-To be added
 
 ## Built With
 
