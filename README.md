@@ -2,12 +2,12 @@
 
 A mastermind inspired game.
 
-## Current Tasks
+## What I Did
 - [x] main.js - created all the functions to make game work backend
 - [x] main.css - updated and added to file for styling
 - [x] index.html - given at point of fork, made minor changes
 
-### Game Screenshot
+## My Version Screenshots
 ![General Screenshot](screenshot/gamesession.png)
 
 ![Win Screenshot](screenshot/lose.png)
@@ -17,7 +17,7 @@ A mastermind inspired game.
 
 ## Built With
 
-* Javascript
+* Javascript,  HTML, CSS
 
 
 ## Acknowledgments
