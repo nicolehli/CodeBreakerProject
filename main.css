@@ -83,11 +83,14 @@ line-height: 60px;
 
 .form-inline {
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
-.message {
+.message, h1 {
   font-weight: bold;
   margin: 20px;
+  color: yellow;
+  text-shadow: 2px 2px black;
 }
 
 .rules {
