@@ -1,6 +1,13 @@
 let answer = document.getElementById('answer');
 let attempt = document.getElementById('attempt');
 
+document.getElementById("user-guess").addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {  // keyCode 13 is enter key
+        guess();
+    }
+});
+
+
 function guess() {
   let input = document.getElementById('user-guess');
 
